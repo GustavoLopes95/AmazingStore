@@ -1,6 +1,2 @@
-namespace AmazingStore.Core {
-
-    class class1 {
-        
-    }
-}
+export { default as Entity } from "./DomainObject/Entity";
+export { default as IAggregationRoot } from "./DomainObject/IAggregationRoot";

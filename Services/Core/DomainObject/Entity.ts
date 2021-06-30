@@ -1,25 +1,22 @@
 import { Guid } from "guid-typescript";
+abstract class Entity {
+  protected constructor() {
+    this.id = Guid.create();
+  }
 
-namespace AmazingStore.Core.DomainObject {
+  get id(): Guid {
+    return this.id;
+  }
 
-    abstract class Entity {
-        
-        protected constructor() {
-            this.id = Guid.create();
-        }
+  set id(value: Guid) {
+    this.id = value;
+  }
 
-        get id(): Guid {
-            return this.id;
-        }
+  public equals(obj: object): boolean {
+    const compareTo = obj as Entity;
 
-        set id(value: Guid) {
-            this.id = value;
-        }
-
-        public equals(obj: object): boolean {
-            const compareTo = obj as Entity;
-
-            return this.id.equals(compareTo.id);
-        }
-    }
+    return this.id.equals(compareTo.id);
+  }
 }
+
+export default Entity;
