@@ -6,10 +6,10 @@ interface IProduct {
   id?: Guid;
   name: string;
   description: string;
-  active: boolean;
+  active?: boolean;
   value: number;
-  createdAt: Date;
-  image: string;
+  createdAt?: Date;
+  image?: string;
   stock?: number;
   category?: Category;
 }
