@@ -1,6 +1,7 @@
+import Entity from "../../Core/DomainObject/Entity";
 
 
-class Voucher extends Entity{
+class Voucher extends Entity {
 
 }
 
