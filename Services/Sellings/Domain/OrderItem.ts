@@ -2,9 +2,8 @@ import { Guid } from "guid-typescript";
 import Entity from "../../Core/DomainObject/Entity";
 
 interface IOrderItem {
-  orderId: Guid;
   productId: Guid;
-  name: string;
+  productName: string;
   quantity: number;
   unityValue: number;
 }
@@ -35,11 +34,11 @@ class OrderItem extends Entity {
 	}
 
   public get productName(): string {
-		return this.name;
+		return this.productName;
 	}
 
-  private set name(value: string) {
-		this.name = value;
+  private set productName(value: string) {
+		this.productName = value;
 	}
 
   public get quantity(): number {

@@ -1,18 +1,18 @@
 import { Guid } from "guid-typescript";
-import OrderStatusEnum from './enums/OrderStatusEnum';
+import OrderStatusEnum from './Enums/OrderStatusEnum';
 import Entity from "../../Core/DomainObject/Entity";
 import IAggregationRoot from "../../Core/DomainObject/IAggregateRoot";
 import OrderItem from "./OrderItem";
 import Voucher from "./Voucher";
-import DiscountTypeEnum from "./enums/DiscountTypeEnum";
+import DiscountTypeEnum from "./Enums/DiscountTypeEnum";
 import DomainException from "../../Core/Exceptions/DomainException";
 
 
 interface IOrder {
 	clientId: Guid;
-	hasVoucher: boolean;
-	discount: number;
-	totalValue: number;
+	hasVoucher?: boolean;
+	discount?: number;
+	totalValue?: number;
 }
 
 class Order extends Entity implements IAggregationRoot {
