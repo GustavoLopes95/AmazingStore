@@ -14,6 +14,8 @@ class OrderItem extends Entity {
   constructor(properties: IOrderItem) {
     super();
     Object.assign(this, properties);
+
+    this.isValid();
   }
 
 	public get orderId(): Guid {
@@ -56,16 +58,20 @@ class OrderItem extends Entity {
 		this.unityValue = value;
 	}
 
+  public attachOrder(id: Guid) {
+    this.orderId = id;
+  }
+
   public getTotalValue(): number {
     return this.quantity * this.unityValue;
   }
 
-  public addUnity(unity: number): void {
+  public addQuantity(unity: number): void {
     if(unity < 0)unity = unity * -1;
     this.quantity += unity;
   }
 
-  public removeUnity(unity: number): void {
+  public removeQuantity(unity: number): void {
     if(unity > 0)unity = unity * -1;
     this.quantity -= unity;
   }
@@ -74,6 +80,9 @@ class OrderItem extends Entity {
     this.quantity = unity;
   }
 
+  public isValid(): boolean {
+    return true;
+  }
 }
 
 export default OrderItem;

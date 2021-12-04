@@ -17,6 +17,8 @@ abstract class Entity {
 
     return this.id.equals(compareTo.id);
   }
+
+  abstract isValid(): boolean;
 }
 
 export default Entity;
