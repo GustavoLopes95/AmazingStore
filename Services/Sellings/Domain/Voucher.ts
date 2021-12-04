@@ -100,6 +100,10 @@ class Voucher extends Entity {
   private set wasUsed(value: boolean) {
     this.wasUsed = value;
   }
+
+  public isValid(): boolean {
+    return true;
+  }
 }
 
 export default Voucher;
