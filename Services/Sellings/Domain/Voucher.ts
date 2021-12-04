@@ -1,5 +1,5 @@
 import Entity from "../../Core/DomainObject/Entity";
-import DiscountTypeEnum from "./enums/DiscountTypeEnum";
+import DiscountTypeEnum from "./Enums/DiscountTypeEnum";
 
 interface IVoucher {
   code: string;
