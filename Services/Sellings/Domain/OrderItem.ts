@@ -56,6 +56,24 @@ class OrderItem extends Entity {
 		this.unityValue = value;
 	}
 
+  public getTotalValue(): number {
+    return this.quantity * this.unityValue;
+  }
+
+  public addUnity(unity: number): void {
+    if(unity < 0)unity = unity * -1;
+    this.quantity += unity;
+  }
+
+  public removeUnity(unity: number): void {
+    if(unity > 0)unity = unity * -1;
+    this.quantity -= unity;
+  }
+
+  public updateUnity(unity: number): void {
+    this.quantity = unity;
+  }
+
 }
 
 export default OrderItem;
