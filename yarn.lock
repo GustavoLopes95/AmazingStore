@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+fluentvalidation-ts@^2.2.2:
+  version "2.2.2"
+  resolved "https://registry.yarnpkg.com/fluentvalidation-ts/-/fluentvalidation-ts-2.2.2.tgz#21cd04c60760515eac8d73640ea718d71c353780"
+  integrity sha512-ZVBNfYtmfGu+hFIvtL1s+J+pVhP61XoFJihs/I4Ld3NYECqpbYUbZCWIIFNbFEL37wha9/odRCN+MvgBOJwysQ==
+
 guid-typescript@^1.0.9:
   version "1.0.9"
   resolved "https://registry.yarnpkg.com/guid-typescript/-/guid-typescript-1.0.9.tgz#e35f77003535b0297ea08548f5ace6adb1480ddc"

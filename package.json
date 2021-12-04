@@ -14,6 +14,7 @@
     "typescript": "^4.5.2"
   },
   "dependencies": {
+    "fluentvalidation-ts": "^2.2.2",
     "guid-typescript": "^1.0.9"
   }
 }
