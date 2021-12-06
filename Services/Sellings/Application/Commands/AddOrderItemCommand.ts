@@ -3,7 +3,7 @@ import Command from "../../../Core/Messages/Command";
 
 import { Validator } from 'fluentvalidation-ts';
 
-interface IAddOrderItemCommand {
+export interface IAddOrderItemCommand {
   clientId: Guid;
   productId: Guid;
   productName: string;
@@ -13,49 +13,55 @@ interface IAddOrderItemCommand {
 
 class AddOrderItemCommand extends Command<AddOrderItemCommand> {
 
+  private _clientId: Guid;
+  private _productId: Guid;
+  private _productName: string;
+  private _quantity: number;
+  private _unityValue: number;
+
   constructor(properties: IAddOrderItemCommand) {
     super();
     Object.assign(this, properties);
   }
 
   public get clientId(): Guid {
-		return this.clientId;
+		return this._clientId;
 	}
 
   private set clientId(value: Guid) {
-		this.clientId = value;
+		this._clientId = value;
 	}
 
   public get productId(): Guid {
-		return this.productId;
+		return this._productId;
 	}
 
   private set productId(value: Guid) {
-		this.productId = value;
+		this._productId = value;
 	}
 
   public get productName(): string {
-		return this.productName;
+		return this._productName;
 	}
 
   private set productName(value: string) {
-		this.productName = value;
+		this._productName = value;
 	}
 
   public get quantity(): number {
-		return this.quantity;
+		return this._quantity;
 	}
 
   private set quantity(value: number) {
-		this.quantity = value;
+		this._quantity = value;
 	}
 
   public get unityValue(): number {
-		return this.unityValue;
+		return this._unityValue;
 	}
 
   private set unityValue(value: number) {
-		this.unityValue = value;
+		this._unityValue = value;
 	}
 
   public isValid(): boolean {

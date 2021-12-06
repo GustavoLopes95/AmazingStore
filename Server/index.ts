@@ -1,8 +1,11 @@
-import express from 'express';
+import { PrismaClient } from '@prisma/client';
+import express, { Application } from 'express';
 import expressAdapterRouter from './Helpers/ExpressAdapterRouter';
 
+import './ApplicationContext';
+
 class App {
-  public express: express.Application;
+  public readonly express: Application;
 
   public constructor() {
     this.express = express();

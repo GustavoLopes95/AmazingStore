@@ -2,7 +2,7 @@ import { Application, Router } from 'express';
 import { readdirSync, statSync } from 'fs';
 import path from 'path';
 
-function importRoutes(directory, app: Application) {
+function importRoutes(directory: string, app: Application) {
   readdirSync(directory).map(async file => {
     const fullPath = path.join(directory, file);
 

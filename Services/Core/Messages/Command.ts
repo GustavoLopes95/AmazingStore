@@ -8,25 +8,28 @@ interface ValidationResult {
 
 abstract class Command<T> extends Message implements IRequest<boolean> {
 
+  private _timeStamp: number;
+  private _validationResult: ValidationErrors<T>;
+
   protected constructor() {
     super();
     this.timeStamp = Date.now();
   }
 
   public get timeStamp(): number {
-    return this.timeStamp;
+    return this._timeStamp;
   }
 
-  public set timeStamp(value: number) {
-    this.timeStamp = value;
+  private set timeStamp(value: number) {
+    this._timeStamp = value;
   }
 
   public get validationResult(): ValidationErrors<T> {
-    return this.validationResult;
+    return this._validationResult;
   }
 
   public set validationResult(value: ValidationErrors<T>) {
-    this.validationResult = value;
+    this._validationResult = value;
   }
 
   abstract isValid(): boolean;

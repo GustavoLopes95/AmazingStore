@@ -1,0 +1,23 @@
+version: "3"
+
+services:
+  database:
+    container_name: postgres
+    image: postgres:9.6
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: 123456
+      PGDATA: /data/postgres
+    volumes:
+      - database:/data/postgres
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
+    networks:
+      - local
+
+volumes:
+  database:
+networks:
+  local:
+    driver: bridge
